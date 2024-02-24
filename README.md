@@ -1,4 +1,4 @@
-# Project Title
+# IEEE Chrome Extension Project
 
 This is a chrome extension that will help you organize your tabs, assignments, and more.
 
@@ -11,26 +11,45 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to utilize this project and how to install them
 
 ```
-Give examples
+NodeJS (v20.8.0 used) - https://nodejs.org/en/download/current
+NPM (v10.4.0 used) - https://nodejs.org/en/download/current
+Visual Studio Code (v1.18.6 used) - https://code.visualstudio.com/download
+MongoDB Atlas (provided by MongoDB) - https://www.mongodb.com/
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A step by step series of examples that tell you how to get a development env running:
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Clone the project (or download it):
 
 ```
-until finished
+git clone https://github.com/IEEE-Henry/back-end.git
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Open the root directory in Visual Studio Code
+
+Run the following command in root folder
+
+```
+npm install
+```
+
+Create a .env file in the backend directory with the following values
+
+```
+PORT=5555
+DATABASE_URL=(your mongodb ip, example is mongodb+srv://user:pass@ieeecluster.aevqphg.mongodb.net/?retryWrites=true&w=majority)
+DATABASE_TABLE=ieee
+```
+
+# To run the backend
+
+Click on the "Run and Debug" button (left sidebar)
+
+Ensure the dropdown says "Backend Development"
+
+Click the Play button
 
 ## Running the tests
 
@@ -55,6 +74,7 @@ Give an example
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
+PM2?
 
 ## Built With
 
@@ -72,7 +92,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Jason Yue** - *Initial work* - [kymotsujason](https://github.com/kymotsujason)
+* **Jason Yue** - *Initial template* - [kymotsujason](https://github.com/kymotsujason)
+* **Aiba** - *Modifications for IEEE Project* [Aibaww](https://github.com/Aibaww)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
