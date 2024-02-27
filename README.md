@@ -24,7 +24,7 @@ A step by step series of examples that tell you how to get a development env run
 Clone the project (or download it):
 
 ```
-git clone https://github.com/IEEE-Henry/back-end.git
+git clone https://github.com/Aibaww/IEEE24-Backend.git
 ```
 
 Open the root directory in Visual Studio Code
@@ -35,7 +35,7 @@ Run the following command in root folder
 npm install
 ```
 
-Create a .env file in the backend directory with the following values
+Create a .env file in the root directory (ieee-backend) with the following values
 
 ```
 PORT=5555
