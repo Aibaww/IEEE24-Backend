@@ -78,9 +78,9 @@ PM2?
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Node.js](http://nodejs.org) - environment
+* [ExpressJS](http://expressjs.org) - web framework used
+* [Mongo Atlas](https://www.mongodb.com/atlas/database) - database used
 
 ## Contributing
 
@@ -93,7 +93,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Jason Yue** - *Initial template* - [kymotsujason](https://github.com/kymotsujason)
-* **Aiba** - *Modifications for IEEE Project* [Aibaww](https://github.com/Aibaww)
+* **Aiba** - *DevOps, server & db setup* [Aibaww](https://github.com/Aibaww)
+* **Phatic** - *Routes programming* [phatic39](https://github.com/phatic39)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
