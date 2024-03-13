@@ -21,6 +21,7 @@ const connectDB = () => {
     dbConnection.on("error", (err) => {
         console.error(`connection error: ${err}`);
     });
+   
     return;
 }
 

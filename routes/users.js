@@ -1,18 +1,21 @@
 
 
 const express = require('express');
-const connectDB = require('../db');
+const connectDB = require('../db.js');
 const router = express.Router();
 
 
 async function getDatabase() {
     const client = await connectDB();
+    console.log("working")
+
     return client.db('users').collection('userinfo');
 }
 
 // GET route to fetch all users
 router.get('/', async (req, res) => {
     try {
+        console.log("yeayas")
         const db = await getDatabase();
         const users = await db.find({}).toArray();
         res.json(users);
