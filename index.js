@@ -15,9 +15,7 @@ var logger = require('morgan');
 var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
 var connectDB = require('./db.js');
-
-
-const routes = require('./routes/users.js')
+var s3 = require('./s3.js');
 
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
@@ -46,11 +44,13 @@ const usersRouter = require('./routes/users');
 const tabsRouter = require('./routes/tabs');
 const tasksRouter = require('./routes/tasks');
 const RootRouter = require('./routes/index');
+const faviconRouter = require('./routes/favicon');
 
 // routes
 app.use('/users', usersRouter);
 app.use('/tabs', tabsRouter);
 app.use('/tasks', tasksRouter);
+app.use('/favicon.ico', faviconRouter);
 
 // root route, displays hello world
 app.use('/', RootRouter);
