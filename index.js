@@ -50,7 +50,7 @@ const faviconRouter = require('./routes/favicon');
 app.use('/users', usersRouter);
 app.use('/tabs', tabsRouter);
 app.use('/tasks', tasksRouter);
-app.use('/favicon.ico', faviconRouter);
+app.use('/favicon', faviconRouter);
 
 // root route, displays hello world
 app.use('/', RootRouter);
