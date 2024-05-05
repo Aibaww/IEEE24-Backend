@@ -1,23 +1,17 @@
 
-
 const express = require('express');
-const connectDB = require('../db.js');
 const router = express.Router();
+const getDatabase = require('../db.js');
+const { ObjectId } = require('mongodb');
 
 
-async function getDatabase() {
-    const client = await connectDB();
-    console.log("working")
-
-    return client.db('users').collection('userinfo');
-}
 
 // GET route to fetch all users
 router.get('/', async (req, res) => {
     try {
-        console.log("yeayas")
-        const db = await getDatabase();
-        const users = await db.find({}).toArray();
+
+        const usersCollection = (await getDatabase()).collection('userinfo');
+        const users = await usersCollection.find({}).toArray();
         res.json(users);
     } catch (error) {
         console.error("Failed to fetch users:", error);
@@ -26,8 +20,8 @@ router.get('/', async (req, res) => {
 });
 router.post('/', async (req, res) => {
     try {
-        const db = await getDatabase();
-        const newUser = await db.insertOne(req.body); 
+        const usersCollection = (await getDatabase()).collection('userinfo');
+        const newUser = await usersCollection.insertOne(req.body); 
         res.status(201).json(newUser);
     } catch (error) {
         console.error("Failed to add user:", error);
@@ -38,9 +32,10 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try {
-        const db = await getDatabase();
+        const usersCollection = (await getDatabase()).collection('userinfo');
+        console.log(usersCollection);
         const { id } = req.params; 
-        const result = await db.deleteOne({ _id: id }); 
+        const result = await usersCollection.deleteOne({ userid: id }); 
         if (result.deletedCount === 0) {
             return res.status(404).send("User not found");
         }

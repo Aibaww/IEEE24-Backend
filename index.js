@@ -15,7 +15,7 @@ const usersRouter = require('./routes/users');
 const tabsRouter = require('./routes/tabs');
 const  tasksRouter = require('./routes/tasks');
 
-
+app.use(express.json());
 app.use('/users', usersRouter);
 app.use('/tabs', tabsRouter);
 app.use('/tasks', tasksRouter);
