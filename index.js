@@ -18,13 +18,6 @@ var connectDB = require('./db.js');
 var s3 = require('./s3.js');
 var cors = require('cors');
 
-const liveReloadServer = livereload.createServer();
-liveReloadServer.server.once("connection", () => {
-    setTimeout(() => {
-        liveReloadServer.refresh("/");
-    }); // if reload fails, change to }, 100);
-});
-
 connectDB();
 
 var app = express();
