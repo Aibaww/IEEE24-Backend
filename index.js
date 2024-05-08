@@ -16,6 +16,7 @@ var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
 var connectDB = require('./db.js');
 var s3 = require('./s3.js');
+var cors = require('cors');
 
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
@@ -28,7 +29,7 @@ connectDB();
 
 var app = express();
 
-app.use(connectLiveReload());
+app.use(cors());
 
 // view engine setup
 
