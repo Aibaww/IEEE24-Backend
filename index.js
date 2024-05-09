@@ -12,12 +12,12 @@ router.get('/', (req, res) => {
 
 
 const usersRouter = require('./routes/users');
-const tabsRouter = require('./routes/tabs');
+const groupsRouter = require('./routes/tabGroups');
 const  tasksRouter = require('./routes/tasks');
 
 app.use(express.json());
 app.use('/users', usersRouter);
-app.use('/tabs', tabsRouter);
+app.use('/tabs', groupsRouter);
 app.use('/tasks', tasksRouter);
 
 
